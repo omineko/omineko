@@ -5,15 +5,16 @@
 <h1>
 <img align="right" height="120" src="./images/tohru.gif"  />
 
-Yo!👋 (´ω ｀).</h1>
+Yo!👋 (´ω ｀).
+</h1>
 
 ###
 
 <img width="390" src="./github-metrics.svg" align="left" />
 <img width="390" src="./medias.svg" align="right" />
 <img width="390" src="./featured.svg" align="left" />
-<img width="390" src="./general.svg" align="left" />
 <img width="390" src="./code.svg" align="left" />
+<img width="390" src="./general.svg" align="left" />
 
 ###
 
@@ -40,7 +41,7 @@ Yo!👋 (´ω ｀).</h1>
 
 <br clear="both">
 
-<h1 align="center">Stats</h1>
+<h2 align="center">Stats</h2>
 
 <div align="center">
   <img src="https://streak-stats.demolab.com?user=omineko&locale=en&mode=daily&theme=chartreuse-dark&hide_border=true&border_radius=5&date_format=j M[ Y]&order=3" height="150" alt="streak graph" />
