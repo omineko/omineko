@@ -49,9 +49,8 @@ jobs:
         with:
           filename: general.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: header
-          base_indepth: yes
-          config_order: base.header, habits, achievements, fortune
+          base: ""
+          config_order: habits, achievements, fortune
           plugin_habits: yes
           plugin_habits_charts: yes
           plugin_achievements: yes
