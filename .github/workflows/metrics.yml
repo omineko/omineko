@@ -24,8 +24,8 @@ jobs:
           base: ""
           config_order: anilist, music
           plugin_anilist: yes
-          plugin_anilist_medias: anime
-          plugin_anilist_sections: favorites, characters
+          plugin_anilist_medias: anime, manga
+          plugin_anilist_sections: favorites, characters, reading
           plugin_anilist_limit: 4
           plugin_anilist_limit_characters: 22
           plugin_music: yes
