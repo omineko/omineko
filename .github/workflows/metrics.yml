@@ -36,7 +36,7 @@ jobs:
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
-          filename: achievements.svg
+          filename: code.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_code: yes
@@ -65,7 +65,7 @@ jobs:
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
-          filename: general.svg
+          filename: featured.svg
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_repositories: yes
