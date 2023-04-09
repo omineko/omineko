@@ -1,0 +1,72 @@
+name: Metrics
+on:
+  # 🌏 Think about the planet! No need to update stats too frequently
+  schedule: [{ cron: "0 16 * * *" }]
+  # 💡 The following line lets you run workflow manually from the action tab!
+  workflow_dispatch:
+  # (optional) Run workflow when pushing on master/main
+  push: { branches: ["master", "main"] }
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          config_timezone: Hongkong
+
+      - name: 🦑 Medias
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: medias.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          config_order: anilist, music
+          plugin_anilist: yes
+          plugin_anilist_medias: anime
+          plugin_anilist_sections: favorites, characters
+          plugin_anilist_limit: 4
+          plugin_anilist_limit_characters: 22
+          plugin_music: yes
+          plugin_music_playlist: ${{ secrets.PLAYLIST }}
+          plugin_music_limit: 9
+
+      - name: 🦑 JavaScript or TypeScript snippet of the day
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: achievements.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_code: yes
+          plugin_code_languages: javascript, typescript, csharp, java
+          plugin_code_load: 400
+
+      - name: 🦑 General
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: general.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header
+          base_indepth: yes
+          config_order: base.header, habits, achievements, fortune
+          plugin_habits: yes
+          plugin_habits_charts: yes
+          plugin_achievements: yes
+          plugin_achievements_display: compact
+          plugin_activity: yes
+          plugin_activity_limit: 2
+          plugin_activity_timestamps: yes
+          plugin_fortune: yes
+
+      - name: 🦑 Featured
+        if: ${{ success() || failure() }}
+        uses: lowlighter/metrics@latest
+        with:
+          filename: general.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_repositories: yes
+          plugin_repositories_featured: omineko/hospital-console-system, omineko/word-guess
